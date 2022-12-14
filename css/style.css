@@ -23,7 +23,8 @@ body {
     flex-direction: column;
 }
 
-a, button {
+a,
+button {
     text-decoration: none;
     cursor: pointer;
 }
@@ -117,7 +118,7 @@ section .right {
     align-items: end;
 }
 
-section .right p  {
+section .right p {
     font-size: 20px;
     color: var(--secondary);
     font-weight: 600;
@@ -160,7 +161,9 @@ ul li {
     font-weight: 600;
 }
 
-span.accent {color: var(--primary);}
+span.accent {
+    color: var(--primary);
+}
 
 ul.listing li::before {
     content: "";
@@ -205,12 +208,13 @@ form {
     box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
 }
 
-form input, form textarea {
+form input,
+form textarea {
     padding: .75rem 1rem;
     border: 2px solid var(--primary);
     border-radius: 20px;
     resize: none;
-    width: 100%!important;
+    width: 100% !important;
     outline-color: var(--secondary);
 }
 
@@ -220,7 +224,8 @@ form :is(input, textarea)::placeholder {
     color: var(--secondary);
 }
 
-form button, a.btn {
+form button,
+a.btn {
     border: .2rem solid var(--primary);
     padding: .5rem 1rem;
     max-width: fit-content;
@@ -287,7 +292,8 @@ form.login a.btn {
     transition: .3s;
 }
 
-.dash-btn:hover,  .dash-btn.active {
+.dash-btn:hover,
+.dash-btn.active {
     background-color: var(--secondary);
     border-color: var(--primary);
 }
@@ -297,13 +303,18 @@ form.login a.btn {
     gap: 2rem;
     margin-top: 2rem;
 }
-.dashboard .right h1  {
+
+.dashboard .right h1 {
     font-size: 48px;
     color: var(--black-ish);
     font-weight: 600;
     margin: 0 0 1rem;
 }
-.dashboard .left{
+.dashnav {
+    flex: 1;
+    justify-content: space-between;
+}
+.dashboard .left {
     width: fit-content;
     grid-template-columns: auto 1fr;
 }
@@ -311,11 +322,137 @@ form.login a.btn {
 .dashboard .right p {
     color: var(--secondary);
     font-weight: 600;
-    
+
 }
 
 .dashboard .right .analytics-img {
     box-shadow: rgba(3, 102, 214, 0.3) 0px 0px 0px 3px;
     border-radius: .25rem;
     max-width: 500px;
+}
+
+
+@media (max-width: 480px) {
+    section {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    section .left {
+        width: fit-content !important;
+    }
+
+    section .left h1 {
+        font-size: 48px;
+        width: fit-content !important;
+    }
+
+    nav {
+        flex-direction: column;
+        align-items: flex-end;
+        height: 100%;
+    }
+
+    h1 {
+        margin: .25rem 0;
+    }
+
+    nav ul {
+        align-items: center;
+        gap: 0;
+        width: 100%;
+        margin: 0;
+        padding: 1rem 0;
+        height: 50px;
+    }
+
+    nav ul:first-child {
+        justify-content: space-between;
+        padding: 0 .5rem .25rem;
+        color: white;
+        background-color: var(--primary);
+    }
+
+
+    nav ul li {
+        margin: 0;
+        padding: 0;
+    }
+
+    nav li a:not(.nav-btn) {
+        padding: .5rem;
+    }
+
+    /* nav li a.nav-btn.nav-action {
+        background-color: var(--secondary) !important;
+    } */
+    nav li a:not(.nav-btn).active,
+    nav li a:not(.nav-btn):hover {
+        color: var(--secondary);
+    }
+
+    nav li a.nav-btn {
+        padding: .25rem .5rem;
+    }
+
+    .dashboard {
+        flex-direction: column;
+        margin: 0;
+        align-items: center;
+    }
+
+    .dashnav {
+        flex: initial;
+        justify-content: space-between;
+    }
+
+    .dash-btn {
+        padding: .15rem .25rem;
+        font-size: small;
+        word-break: keep-all;
+    }
+    .dashboard-menu {
+        /* flex-direction: row; */
+        height: initial;
+        gap: .5rem;
+        overflow-x: scroll;
+    }
+    
+    main {
+        padding: .15rem;
+    }
+    
+    .dashboard-menu :is(.top, .bottom) {
+        align-items: center;
+        overflow-x: scroll;
+        justify-content: start;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+        width: 100%;
+        margin: 0 auto;
+        flex-direction: row;
+    }
+
+    nav,header {
+        max-width: 100%;
+    }
+
+    .dashboard .right .analytics-img {
+        width: 100%;
+    }
+    .dashboard .right  {
+        max-width: 100%;
+    }
+    
+/* 
+    .dashboard-menu div:is(.top, .bottom) {
+        flex-direction: row !important;
+        flex-wrap: wrap !important;
+    } */
+
+    /* nav ul {
+        flex-direction: column;
+    } */
 }
