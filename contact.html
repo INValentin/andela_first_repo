@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
+    <title>Contact</title>
     <link rel="stylesheet" href="./css/style.css">
 </head>
 
@@ -13,9 +13,9 @@
     <header>
         <nav>
             <ul>
-                <li><a class="active" href="./index.html">Home</a></li>
+                <li><a href="./index.html">Home</a></li>
                 <li><a href="./portifolio.html">Portifolio</a></li>
-                <li><a href="./contact.html">Contact</a></li>
+                <li><a class="active" href="./contact.html">Contact</a></li>
                 <li><a href="./about.html">About</a></li>
             </ul>
             <ul>
@@ -30,14 +30,22 @@
     </header>
     <main>
         <section>
-            <div class="left">
-                <h1>Software <span>Developer</span></h1>
-                <p>My name is <span>John ISHIMWE</span>, contact me for <span>quality work</span>.</p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro, nam!</p>
-                <button class="action">Hire Me</button>
+            <div style="width: 400px;" class="left">
+                <h1>Contact.</h1>
+                <p class="action">How to find me.</p>
+                <ul class="listing">
+                    <li>Email: <span class="accent">johndoe@email.com</span></li>
+                    <li>Phone: <span class="accent">+26076589432</span></li>
+                    <li>LinkedIn: <span class="accent">linkedin.com/john</span></li>
+                </ul>
             </div>
             <div class="right">
-                <img src="./images/coding.png" alt="Coding">
+                <form action="#" class="contact">
+                    <input type="text" placeholder="Full Name">
+                    <input type="text" placeholder="Email">
+                    <textarea placeholder="Message.."></textarea>
+                    <button>Send</button>
+                </form>
             </div>
         </section>
     </main>
