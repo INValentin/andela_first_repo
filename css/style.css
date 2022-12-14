@@ -17,6 +17,12 @@ body {
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
 a {
     text-decoration: none;
     cursor: pointer;
@@ -73,6 +79,7 @@ nav li a.nav-btn:hover {
 }
 
 main {
+    flex: 1;
     max-width: 916px;
     margin: 0 auto;
     padding: 1rem;
@@ -82,12 +89,19 @@ section {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     align-items: center;
+    gap: 2rem;
 }
 
 section .left h1 {
     font-size: 72px;
     color: var(--black-ish);
     font-weight: 900;
+}
+
+section .right {
+    width: 300px;
+    align-self: flex-end;
+    justify-self: end;
 }
 
 section .left h1 span {
@@ -107,6 +121,35 @@ section .left button.action {
     margin-top: 3.5rem;
 }
 
+p.action {
+    color: var(--secondary);
+    font-weight: 600;
+    font-size: large;
+}
+
+ul.listing {
+    list-style-type: none;
+    margin-left: .5rem;
+    margin-top: 2rem;
+}
+
+ul li {
+    position: relative;
+    margin-top: 0.5rem;
+    padding-left: 2rem;
+    font-weight: 600;
+}
+
+ul.listing li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    background-color: var(--primary);
+    width: 15px;
+    height: 15px;
+    border-radius: 9999px;
+}
+
 button.action {
     border: .5rem solid var(--primary);
     padding: 1rem 1.25rem;
@@ -116,4 +159,16 @@ button.action {
     font-weight: 900;
     color: var(--primary);
     background-color: var(--secondary);
+}
+
+footer {
+    background-color: var(--primary);
+    padding: .5rem;
+    text-align: center;
+}
+
+footer span {
+    color: white;
+    font-weight: 600;
+    font-size: medium;
 }
