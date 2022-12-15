@@ -40,18 +40,31 @@
                 </ul>
             </div>
             <div class="right">
-                <form action="#" class="contact">
-                    <input type="text" placeholder="Full Name">
-                    <input type="text" placeholder="Email">
-                    <textarea placeholder="Message.."></textarea>
+                <form action="#" id="contact-form" class="contact">
+                    <input id="contact-names" type="text" placeholder="Full Name">
+                    <input id="contact-email" type="text" placeholder="Email">
+                    <textarea id="contact-message" placeholder="Message.."></textarea>
                     <button>Send</button>
                 </form>
+                <div class="contact-list">
+                    <template id="contact-template">
+
+                        <div class="user-contact">
+                            <div class="contact-name">My Name</div>
+                            <div class="contact-email">developer@life.earth</div>
+                            <div class="contact-message">Letter from underground.</div>
+                            <div class="contact-message"><button class="contact-remove">Delete?</button></div>
+                        </div>
+                    </template>
+                </div>
             </div>
         </section>
     </main>
     <footer>
         <span>&copy; ISHIMWE, 2022</span>
     </footer>
+
+    <script src="./js/contactStorage.js"></script>
 </body>
 
 </html>
