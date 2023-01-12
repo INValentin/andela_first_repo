@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard</title>
     <link rel="stylesheet" href="./css/style.css">
+    <script type="module" src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons/ionicons.esm.js"></script>
 </head>
 
 <body>
@@ -20,26 +21,86 @@
             </ul>
         </nav>
     </header>
-    <main>
+    <main style="margin: 0;max-width: initial;">
         <div class="dashboard">
             <div class="left">
                 <div class="dashboard-menu">
                     <div class="top">
-                        <a class="active dash-btn">Analytics</a>
-                        <a class="dash-btn">Users</a>
-                        <a class="dash-btn">Revenue</a>
-                        <a class="dash-btn">Engagement</a>
+                        <a class="active dash-btn"><ion-icon name="analytics"></ion-icon> Analytics</a>
+                        <a class="dash-btn"><ion-icon name="contacts"></ion-icon> Users
+                        </a>
+                        <a class="dash-btn"><ion-icon name="card"></ion-icon> Revenue</a>
+                        <a class="dash-btn"><ion-icon name="happy"></ion-icon> Engagement</a>
+                        <a class="dash-btn"><ion-icon name="calendar"></ion-icon> Celendar</a>
+                        <a class="dash-btn"><ion-icon name="hammer"></ion-icon> Fixes</a>
                     </div>
                     <div class="bottom">
-                        <a class="dark dash-btn">Settings</a>
+                        <a class="dark dash-btn"><ion-icon name="settings"></ion-icon> Settings</a>
                     </div>
                 </div>
             </div>
             <div class="right">
-                <h1>Analytics.</h1>
-                <p>Get most out of your data.</p>
-                <div class="analytics-img">
-                    <img src="./images/analytics.png" alt="Coding">
+                <div class="dash-cards">
+                    <div class="dash-card">
+                        <div class="dash-card-title">Visitors</div>
+                        <div class="dash-card-measure">
+                            <div class="rise">
+                                <ion-icon name="trending-up"></ion-icon>
+                            </div>
+                            <div class="down">
+                                <ion-icon name="trending-down"></ion-icon>
+                            </div>
+                        </div>
+                        <div class="dash-card-content">12,211</div>
+                    </div>
+                    <div class="dash-card">
+                        <div class="dash-card-title">Predictions</div>
+                        <div class="dash-card-measure">
+                            <div class="rise">
+                                <ion-icon name="trending-up"></ion-icon>
+                            </div>
+                            <div class="down">
+                                <ion-icon name="trending-down"></ion-icon>
+                            </div>
+                        </div>
+                        <div class="dash-card-content">112 K</div>
+                    </div>
+                    <div class="dash-card">
+                        <div class="dash-card-title">Active users</div>
+                        <div class="dash-card-measure">
+                            <div class="rise">
+                                <ion-icon name="trending-up"></ion-icon>
+                            </div>
+                            <div class="down">
+                                <ion-icon name="trending-down"></ion-icon>
+                            </div>
+                        </div>
+                        <div class="dash-card-content">2.5 M</div>
+                    </div>
+                </div>
+                <br>
+                <div class="dash-actions">
+                    <div class="dash-action">
+                        <h3 class="dash-header">Analytics.</h3>
+                        <p>Get most out of your data.</p>
+                        <div class="analytics-img">
+                            <img src="./images/analytics.png" alt="Coding">
+                        </div>
+                    </div>
+                    <div class="dash-action">
+                        <h3 class="dash-header">Activity.</h3>
+                        <p>Track down activities.</p>
+                        <div class="analytics-img">
+                            <img src="./images/activity.png" alt="activities">
+                        </div>
+                    </div>
+                    <div class="dash-action">
+                        <h3 class="dash-header">Management.</h3>
+                        <p>Micro-managing everything.</p>
+                        <div class="analytics-img">
+                            <img src="./images/management.png" alt="management">
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -47,6 +108,7 @@
     <footer>
         <span>&copy; ISHIMWE, 2022</span>
     </footer>
+    <!-- <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script> -->
 </body>
 
 </html>

@@ -254,11 +254,13 @@ form.login a.btn {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    height: 400px;
+    height: 70vh;
     width: 200px;
     flex-direction: column;
     padding: 1rem;
-    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+    margin-right: 1rem;
+    border-right: #027A00 2px solid;
+    /* box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset; */
 }
 
 .dashboard-menu :is(.top, .bottom) {
@@ -290,6 +292,34 @@ form.login a.btn {
     text-align: center;
     font-weight: 500;
     transition: .3s;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: .5rem;
+
+}
+
+.dash-actions {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.dash-action .dash-header {
+    font-weight: 900;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    font-size: x-large;
+}
+.dash-action {
+    /* border: 1px solid #3333337a; */
+    padding: .5rem;
+    border-radius: 10px;
+}
+.dash-action img {
+    width: 250px;
+    box-shadow: none;
 }
 
 .dash-btn:hover,
@@ -298,10 +328,52 @@ form.login a.btn {
     border-color: var(--primary);
 }
 
+.dash-cards {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 0 0 1rem;
+    gap: .5rem;
+}
+
+.dash-card:nth-child(odd) {
+    background-image: linear-gradient(45deg, #9aff637a, transparent);
+}
+.dash-card:nth-child(even) {
+    background-image: linear-gradient(45deg,  transparent, #9AFF637a);
+}
+.dash-card {
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+    overflow: hidden;
+    width: 200px;
+    padding: .75rem .5rem;
+    border-radius: 10px;  
+    display: flex;
+    flex-direction: column;
+    gap: .5rem; 
+    /* backdrop-filter: blur(5px); */
+}
+
+.dash-card-title {
+    font-weight: 900;
+    font-size: large;
+    color: var(--black-ish);
+    z-index: 1;
+}
+
+.dash-card-content {
+    font-weight: 900;
+    font-size: xx-large;
+    color: var(--primary);
+}
+
 .dashboard {
     display: flex;
-    gap: 2rem;
+    gap: 1rem;
     margin-top: 2rem;
+    max-width: 900px;
+    margin: 0 auto;
 }
 
 .dashboard .right h1 {
@@ -309,6 +381,21 @@ form.login a.btn {
     color: var(--black-ish);
     font-weight: 600;
     margin: 0 0 1rem;
+}
+
+.dash-card-measure {
+    display: flex;
+    align-items: center;
+    gap: .25rem;
+    font-weight: 900;
+    font-size: xx-large;
+}
+
+.rise {
+    color: dodgerblue;
+}
+.down {
+    color: red;
 }
 
 .dashnav {
@@ -328,9 +415,8 @@ form.login a.btn {
 }
 
 .dashboard .right .analytics-img {
-    box-shadow: rgba(3, 102, 214, 0.3) 0px 0px 0px 3px;
-    border-radius: .25rem;
-    max-width: 500px;
+    border-radius: .5rem;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
 }
 
 .contact-list {
@@ -435,6 +521,7 @@ article.blog-section .left {
 .blog-message {
     font-size: normal;
     color: black;
+    word-break: break-all;
 }
 
 .blog-readmore {
@@ -521,7 +608,7 @@ button.article-remove.blog-remove {
     margin-top: 3rem;
 }
 
-@media (max-width: 480px) {
+@media (max-width: 560px) {
     section {
         display: flex;
         flex-direction: column;
@@ -603,10 +690,12 @@ button.article-remove.blog-remove {
     }
 
     .dashboard-menu {
-        /* flex-direction: row; */
         height: initial;
         gap: .5rem;
         overflow-x: scroll;
+        margin: 0;
+        border: 0;
+        width: 100%;
     }
 
     main {
@@ -645,8 +734,29 @@ button.article-remove.blog-remove {
         max-width: 320px;
         margin: 0 auto;
     }
+
     article.blog-section .left {
         max-width: 100%;
         overflow: hidden;
+    }
+    .dash-cards {
+        align-items: center;
+        justify-content: center;
+    }
+    .dash-card {
+        width: initial;
+    }
+    .dash-card-title {
+        color: var(--black-ish);
+    }
+    .dash-actions {
+        justify-content: center;
+    }
+    .dash-action {
+        width: 100%;
+        margin: 0 5px;
+    }
+    .dash-action img {
+        max-width: 100%;
     }
 }
