@@ -352,7 +352,6 @@ form.login a.btn {
     display: flex;
     flex-direction: column;
     gap: .5rem; 
-    /* backdrop-filter: blur(5px); */
 }
 
 .dash-card-title {
