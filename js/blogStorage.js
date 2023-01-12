@@ -37,7 +37,8 @@ function addBlog() {
         return alert("Please fill all the fields!")
     }
 
-    const blog = { names, email, message }
+    const id = Date.now()
+    const blog = { id, names, email, message }
 
     blogs.push(blog)
     form.reset()
@@ -48,10 +49,10 @@ function addBlog() {
 
 
 function showBlogs() {
-    blogListEl.innerHTML = `<h3>Saved Blogs!</h3>`
+    blogListEl.innerHTML = `<h3>All blogs.</h3>`
 
     if (blogs.length === 0) {
-        blogListEl.innerHTML += `<h3 style="color: var(--secondary)">No saved blogs!</h3>`
+        blogListEl.innerHTML += `<h3 style="color: var(--secondary)">No signup.html!</h3>`
         return
     }
 
@@ -60,11 +61,14 @@ function showBlogs() {
         let blogEl = blogTemp.content.firstElementChild.cloneNode(true)
         blogEl.querySelector(".blog-name").innerHTML = blog.names
         blogEl.querySelector(".blog-email").innerHTML = blog.email
-        blogEl.querySelector(".blog-message").innerHTML = blog.message
+        blogEl.querySelector(".blog-message").innerHTML = blog.message.slice(0, 100)
+        blogEl.querySelector(".blog-readmore").href += blog.id
         blogEl.querySelector(".blog-remove").addEventListener("click", e => {
-            blogs.splice(i, 1)
-            localStorage.setItem(storeKey, JSON.stringify(blogs))
-            showBlogs()
+            if (window.confirm("Confirm Delete?")) {
+                blogs.splice(i, 1)
+                localStorage.setItem(storeKey, JSON.stringify(blogs))
+                showBlogs()
+            }
         })
 
         blogListEl.appendChild(blogEl)
