@@ -52,7 +52,7 @@ function showBlogs() {
     blogListEl.innerHTML = `<h3>All blogs.</h3>`
 
     if (blogs.length === 0) {
-        blogListEl.innerHTML += `<h3 style="color: var(--secondary)">No signup.html!</h3>`
+        blogListEl.innerHTML += `<h3 style="color: var(--secondary)">No Blogs yet.</h3>`
         return
     }
 
