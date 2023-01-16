@@ -564,6 +564,11 @@ form.blog_form {
     min-height: 100px;
 }
 
+.blog-link {
+    margin-bottom: 1rem;
+    display: inline-block;
+}
+
 .blog-form-button {
     grid-row: 3 / 4;
     grid-column: 1/1;
