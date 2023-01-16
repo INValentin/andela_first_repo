@@ -696,6 +696,12 @@ button.article-remove.blog-remove {
     margin-top: 3rem;
 }
 
+@media (min-width: 715px) {
+    nav {
+        display: flex !important;
+    }
+}
+
 @media (max-width: 715px) {
     #menu-close {
         display: flex;
