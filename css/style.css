@@ -569,12 +569,12 @@ article.blog-section .left {
     background-image: url('../images/blog.png');
     background-repeat: no-repeat;
     background-size: cover;
-    backdrop-filter: blur(30px);
+    /* backdrop-filter: blur(30px); */
     background-position: top;
 }
 
 #blog-form {
-    backdrop-filter: blur(30px);
+    background-color: rgba(255, 255, 255, .6);
 
 }
 
