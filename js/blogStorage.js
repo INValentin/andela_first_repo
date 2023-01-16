@@ -31,7 +31,7 @@ function showBlogs() {
         blogEl.querySelector(".blog-like .blog-count").innerHTML = blog.likes ?? 0
         blogEl.querySelector(".blog-comment .blog-count").innerHTML = blog.comments?.length ?? 0
         blogEl.querySelector(".blog-readmore").href += blog.id
-        blogEl.querySelector(".blog-readmore-admin").href += blog.id
+        //blogEl.querySelector(".blog-readmore-admin").href += blog.id
         blogEl.querySelector(".blog-like").addEventListener("click", e => {
             blogs[i].likes = (blogs[i].likes ?? 0) + 1
             localStorage.setItem(storeKey, JSON.stringify(blogs))
