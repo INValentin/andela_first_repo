@@ -7,11 +7,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portifolio</title>
     <link rel="stylesheet" href="./css/style.css">
+    <script type="module" src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons/ionicons.esm.js"></script>
 </head>
 
 <body>
     <header>
+        <button id="menu-btn"><ion-icon size="large" name="menu"></ion-icon></button>
         <nav>
+            <button id="menu-close"> <ion-icon size="large" name="close-circle-outline"></ion-icon></button>
+
             <ul>
                 <li><a href="./index.html">Home</a></li>
                 <li><a class="active" href="./portifolio.html">Portifolio</a></li>
@@ -24,8 +28,7 @@
                     <a href="./login.html" class="nav-btn">Login</a>
                 </li>
                 <li>
-                    <a class="nav-
-btn" href="./signup.html">Signup</a>
+                    <a class="nav-btn" href="./signup.html">Signup</a>
                 </li>
             </ul>
         </nav>
@@ -63,6 +66,7 @@ btn" href="./signup.html">Signup</a>
     <footer>
         <span>&copy; ISHIMWE, 2022</span>
     </footer>
+    <script src="./js/menu.js"></script>
 </body>
 
 </html>

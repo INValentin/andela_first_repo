@@ -12,12 +12,22 @@
 
 <body>
     <header>
+        <button id="menu-btn"><ion-icon size="large" name="menu"></ion-icon></button>
         <nav>
+            <button id="menu-close"> <ion-icon size="large" name="close-circle-outline"></ion-icon></button>
+
             <ul class="dashnav">
                 <li><a href="./index.html">Home</a></li>
+                <li><a href="./portifolio.html">Portifolio</a></li>
+                <li><a class="active" href="./blog.html">Blog</a></li>
+                <li><a href="./contact.html">Contact</a></li>
+                <li><a href="./about.html">About</a></li>
+            </ul>
+            <ul>
                 <li>
                     <a href="./login.html" class="nav-btn nav-action">Logout</a>
                 </li>
+            </ul>
             </ul>
         </nav>
     </header>
@@ -110,6 +120,7 @@
         <span>&copy; ISHIMWE, 2022</span>
     </footer>
     <!-- <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script> -->
+    <script src="./js/menu.js"></script>
 </body>
 
 </html>

@@ -28,13 +28,18 @@ function showBlogs() {
         blogEl.querySelector(".blog-name").innerHTML = blog.names
         blogEl.querySelector(".blog-email").innerHTML = blog.email
         blogEl.querySelector(".blog-message").innerHTML = blog.message.slice(0, 100)
+        blogEl.querySelector(".blog-like .blog-count").innerHTML = blog.likes ?? 0
+        blogEl.querySelector(".blog-comment .blog-count").innerHTML = blog.comments?.length ?? 0
         blogEl.querySelector(".blog-readmore").href += blog.id
-        blogEl.querySelector(".blog-remove").addEventListener("click", e => {
-            if (window.confirm("Confirm Delete?")) {
-                blogs.splice(i, 1)
-                localStorage.setItem(storeKey, JSON.stringify(blogs))
-                showBlogs()
-            }
+        blogEl.querySelector(".blog-readmore-admin").href += blog.id
+        blogEl.querySelector(".blog-like").addEventListener("click", e => {
+            blogs[i].likes = (blogs[i].likes ?? 0) + 1
+            localStorage.setItem(storeKey, JSON.stringify(blogs))
+            showBlogs()
+        })
+
+        blogEl.querySelector(".blog-comment").addEventListener("click", e => {
+            blogEl.querySelector(".blog-readmore").click()
         })
 
         blogListEl.appendChild(blogEl)

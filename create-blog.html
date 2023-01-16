@@ -7,11 +7,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blog</title>
     <link rel="stylesheet" href="./css/style.css">
+    <script type="module" src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons/ionicons.esm.js"></script>
 </head>
 
 <body>
     <header>
+        <button id="menu-btn"><ion-icon size="large" name="menu"></ion-icon></button>
         <nav>
+            <button id="menu-close"> <ion-icon size="large" name="close-circle-outline"></ion-icon></button>
+
             <ul>
                 <li><a href="./index.html">Home</a></li>
                 <li><a href="./portifolio.html">Portifolio</a></li>
@@ -24,8 +28,7 @@
                     <a href="./login.html" class="nav-btn">Login</a>
                 </li>
                 <li>
-                    <a class="nav-
-btn" href="./signup.html">Signup</a>
+                    <a class="nav-btn" href="./signup.html">Signup</a>
                 </li>
             </ul>
         </nav>
@@ -42,7 +45,7 @@ btn" href="./signup.html">Signup</a>
                 </form>
             </div>
             <div class="right">
-                <!-- <div class="blog-list">
+                <div class="blog-list">
                     <template id="blog-template">
 
                         <div class="user-blog">
@@ -53,7 +56,7 @@ btn" href="./signup.html">Signup</a>
                             <div class="blog-message"><button class="blog-remove">Delete?</button></div>
                         </div>
                     </template>
-                </div> -->
+                </div>
             </div>
         </article>
     </main>
@@ -62,6 +65,7 @@ btn" href="./signup.html">Signup</a>
     </footer>
 
     <script src="./js/blog_create.js"></script>
+    <script src="./js/menu.js"></script>
 </body>
 
 </html>
