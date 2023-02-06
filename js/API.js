@@ -1,4 +1,4 @@
-const BASE_URL = location.hostname === 'localhost' ? 'http://localhost:5000' : "";
+const BASE_URL = location.hostname !== 'andela-express.onrender.com' ? 'http://localhost:5000' : "";
 
 
 const login = async (creds) => {
@@ -27,7 +27,7 @@ const deleteAblogComment = async (blogId, commentId) => {
 
 const apiRequest = (func, successCallback, errorCallback) => {
     func().then(async (/**@type {Response} */ res) => {
-        let data = await res.json()
+        let data = res.status === 204 ? {} : await res.json()
         if (res.ok) {
             return successCallback(data)
         } else {
@@ -44,8 +44,8 @@ const request = (url, options = {}) => {
         headers: {
             ...(options.headers || {}),
             'Accept': '*/*',
-            'Content-Type': 'application/json',
-            'Authorization': 'Basic ' + (localStorage.getItem('authToken') ?? '')
+            'Authorization': 'Basic ' + (localStorage.getItem('authToken') ?? ''),
+            'Content-Type': 'application/json'
         }
     })
 }
@@ -70,18 +70,18 @@ function apiGenerator(route) {
     }
 }
 
-const blogs = {
-    ...apiGenerator('blogs'),
-    getBlogComments,
-    deleteAblogComment,
-    likeAblog,
-    updateAblogComment,
-    commentToAblog
-}
+localStorage.setItem('authToken', 'bmV3Ym95OjEyMw==')
 
 const API = {
     login,
-    blogs,
+    blogs: {
+        ...apiGenerator('blogs'),
+        getBlogComments,
+        deleteAblogComment,
+        likeAblog,
+        updateAblogComment,
+        commentToAblog
+    },
     users: apiGenerator('users'),
     contacts: apiGenerator('contacts'),
     request: apiRequest
