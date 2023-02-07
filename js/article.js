@@ -50,11 +50,11 @@ window.addEventListener("DOMContentLoaded", async e => {
         }
         const comment = { comment: message }
         // console.log({comment})
-        commentForm.reset()
         API.request(
             () => API.blogs.commentToAblog(articleId, JSON.stringify(comment)),
             (cmt) => {
                 console.log("comment created", { cmt })
+                commentForm.reset()
                 getComments()
             },
             error => console.error("comment create failed", { error })

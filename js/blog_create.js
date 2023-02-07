@@ -48,9 +48,9 @@ async function addBlog() {
     const id = Date.now()
     const blog = { title, content }
 
-    form.reset()
     API.request(() => API.blogs.create(JSON.stringify(blog)),
         async blog => {
+            form.reset()
             await init()
             console.log("Blog created", { blog })
         },
