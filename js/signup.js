@@ -8,16 +8,24 @@ window.addEventListener('DOMContentLoaded', e => {
         const password = form.querySelector("#password")?.value
 
         if (!Boolean(fullName) || !Boolean(username) || !Boolean(password)) {
-            return alert('Full Name, username & password are required!')
+            return handleShowError('Full Name, username & password are required!')
         }
+
+        const loginLoader = document.getElementById("login-loader")
+        loginLoader.style.display = 'inline-block'
 
         API.request(
             () => API.users.create(JSON.stringify({ fullName, username, password })),
             (user) => {
-                confirm("User created: Login now?") && window.location.href("/login.html")
+                loginLoader.style.display = 'none'
                 console.log("User created", { user });
+                if (confirm("User created: Login now?")){
+                     window.location.href = ("/login.html")
+                }
             },
             error => {
+                loginLoader.style.display = 'none'
+
                 console.error("User not created", { error });
             }
         )

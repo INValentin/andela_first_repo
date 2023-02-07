@@ -11,7 +11,7 @@ window.addEventListener('DOMContentLoaded', async e => {
         const password = form.querySelector('#login-password')?.value
 
         if (!Boolean(username) && !Boolean(password)) {
-            return alert("Username & password are required!")
+            return handleShowError("Username & password are required!")
         }
         
         const loginLoader = document.getElementById("login-loader")
@@ -22,6 +22,11 @@ window.addEventListener('DOMContentLoaded', async e => {
             localStorage.setItem('authToken', token)
             localStorage.setItem('isAdmin', JSON.stringify(isAdmin ?? false))
             loginLoader.style.display = 'none'
+            if (isAdmin) {
+                window.location.href = '/dashboard.html'
+            } else {
+                window.location.href = '/index.html'
+            }
         },
         error => {
             loginLoader.style.display = 'none'

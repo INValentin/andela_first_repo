@@ -86,8 +86,8 @@ window.addEventListener("DOMContentLoaded", async e => {
             if (commentDelete) {
                 commentDelete.addEventListener("click", async e => {
                     if (confirm("Confirm delete comment?")) {
-                        commentEl.remove();
                         API.request(() => API.blogs.commentToAblog(articleId), () => {
+                            commentEl.remove();
                             console.log("comment deleted");
                         }, error => console.error("Comment delete failed", { error }))
                     }

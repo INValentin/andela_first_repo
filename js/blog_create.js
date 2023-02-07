@@ -81,9 +81,9 @@ function showBlogs(blogs) {
         // })
         blogEl.querySelector(".blog-remove").addEventListener("click", e => {
             if (window.confirm("Confirm Delete?")) {
-                blogEl.remove()
                 API.request(() => API.blogs.delete(blog._id),
                     () => {
+                        blogEl.remove()
                         console.log("Blog deleted");
                     },
                     error => console.error("Blog not deleted", { error })
