@@ -34,7 +34,9 @@ const apiRequest = (func, successCallback, errorCallback) => {
             return errorCallback(data?.error?.toString() || '')
         }
     }).catch(error => {
-        errorCallback((error?.error || error?.message || error || '')?.toString())
+        const errorMsg = (error?.error || error?.message || error || '')?.toString()
+        handleShowError(errorMsg)
+        errorCallback(errorMsg)
     })
 }
 
@@ -70,7 +72,7 @@ function apiGenerator(route) {
     }
 }
 
-localStorage.setItem('authToken', 'bmV3Ym95OjEyMw==')
+// localStorage.setItem('authToken', 'bmV3Ym95OjEyMw==')
 
 const API = {
     login,
@@ -85,4 +87,19 @@ const API = {
     users: apiGenerator('users'),
     contacts: apiGenerator('contacts'),
     request: apiRequest
+}
+
+
+function handleShowError(/** @type {String} */ error) {
+    const errorEl = document.querySelector('.error-toast')
+    const closeBtn = errorEl.querySelector('button.error-close')
+
+    errorEl.querySelector("span").innerHTML = error === 'Failed to fetch' ? 'Connection failed!': error
+    errorEl.style.display = 'flex'
+    let timeout = setTimeout(() => errorEl.style.display = "none", 5000)
+
+    closeBtn.addEventListener("click", e => {
+        clearTimeout(timeout)
+        errorEl.style.display = "none"
+    })
 }
