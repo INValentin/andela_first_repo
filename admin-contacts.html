@@ -38,26 +38,13 @@
             </ul>
         </nav>
     </header>
-    <main>
-        <section>
-            <div style="width: 400px;" class="left">
-                <h1>Contact.</h1>
-                <p class="action">How to find me.</p>
-                <ul class="listing">
-                    <li>Email: <span class="accent">johndoe@email.com</span></li>
-                    <li>Phone: <span class="accent">+26076589432</span></li>
-                    <li>LinkedIn: <span class="accent">linkedin.com/john</span></li>
-                </ul>
-            </div>
-            <div class="right">
-                <form action="#" id="contact-form" class="contact">
-                    <input id="contact-names" type="text" placeholder="Full Name">
-                    <input id="contact-email" type="text" placeholder="Email">
-                    <textarea id="contact-message" placeholder="Message.."></textarea>
-                    <button>Send</button>
-                </form>
-                <div style="display: none;" class="contact-list">
+    <main style="margin: 0;">
+        <section style="display: block; width: 100%;">
+            <div class="right" style="max-width: 600px; margin: auto;">
+                <div style="max-width: 100%;" class="contact-list">
+                    <span class="loader"></span>
                     <template id="contact-template">
+
                         <div class="user-contact">
                             <div class="contact-name">My Name</div>
                             <div class="contact-email">developer@life.earth</div>
